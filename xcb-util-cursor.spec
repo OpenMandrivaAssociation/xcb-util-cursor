@@ -4,8 +4,8 @@
 
 Summary:	xcb-util's xcb-cursor
 Name:		xcb-util-cursor
-Version:	0.1.0
-Release:	5
+Version:	0.1.1
+Release:	1
 Url:		http://xcb.freedesktop.org
 Source0:	http://xcb.freedesktop.org/dist/%{name}-%{version}.tar.bz2
 License:	MIT
@@ -19,18 +19,18 @@ BuildRequires:	pkgconfig(xorg-macros)
 This is the libXcursor port to XCB.
 
 %package -n %{libname}
-Summary: xcb-util-cursor library package
-Group: System/X11
+Summary:	xcb-util-cursor library package
+Group:		System/X11
 
 %description -n %{libname}
 This is the libXcursor port to XCB.
 
 %package -n %{develname}
-Summary: xcb-util-cursor development files
-Group: Development/C
-Provides:  libxcb-util-cursor-devel = %{version}-%{release}
-Provides:  xcb-util-cursor-devel = %{version}-%{release}
-Requires:  %{libname} = %{version}-%{release}
+Summary:	xcb-util-cursor development files
+Group:		Development/C
+Provides:	libxcb-util-cursor-devel = %{version}-%{release}
+Provides:	xcb-util-cursor-devel = %{version}-%{release}
+Requires:	%{libname} = %{version}-%{release}
 
 %description -n %{develname}
 This pakcage includes the development files required to build software against
