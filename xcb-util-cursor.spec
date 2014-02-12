@@ -1,11 +1,11 @@
 %define major 0
-%define libname %mklibname %{name} %major
-%define develname %mklibname %{name} -d
+%define libname %mklibname xcb-cursor %{major}
+%define devname %mklibname xcb-cursor -d
 
 Summary:	xcb-util's xcb-cursor
 Name:		xcb-util-cursor
 Version:	0.1.1
-Release:	1
+Release:	2
 Url:		http://xcb.freedesktop.org
 Source0:	http://xcb.freedesktop.org/dist/%{name}-%{version}.tar.bz2
 License:	MIT
@@ -18,23 +18,39 @@ BuildRequires:	pkgconfig(xorg-macros)
 %description
 This is the libXcursor port to XCB.
 
+#----------------------------------------------------------------------------
+
 %package -n %{libname}
 Summary:	xcb-util-cursor library package
 Group:		System/X11
+Obsoletes:	%{_lib}xcb-util-cursor0 < 0.1.1-2
 
 %description -n %{libname}
 This is the libXcursor port to XCB.
 
-%package -n %{develname}
+%files -n %{libname}
+%{_libdir}/libxcb-cursor.so.%{major}*
+
+#----------------------------------------------------------------------------
+
+%package -n %{devname}
 Summary:	xcb-util-cursor development files
 Group:		Development/C
-Provides:	libxcb-util-cursor-devel = %{version}-%{release}
-Provides:	xcb-util-cursor-devel = %{version}-%{release}
-Requires:	%{libname} = %{version}-%{release}
+Requires:	%{libname} = %{EVRD}
+Provides:	%{name}-devel = %{EVRD}
+Obsoletes:	%{_lib}xcb-util-cursor-devel < 0.1.1-2
 
-%description -n %{develname}
+%description -n %{devname}
 This pakcage includes the development files required to build software against
 %{name}.
+
+%files -n %{devname}
+%doc ChangeLog NEWS README
+%{_includedir}/xcb/*.h
+%{_libdir}/libxcb-cursor.so
+%{_libdir}/pkgconfig/xcb-cursor.pc
+
+#----------------------------------------------------------------------------
 
 %prep
 %setup -q
@@ -46,13 +62,3 @@ This pakcage includes the development files required to build software against
 %install
 %makeinstall_std
 
-rm -f %{buildroot}%{_libdir}/*.la
-
-%files -n %{libname}
-%{_libdir}/libxcb-cursor.so.%{major}*
-
-%files -n %{develname}
-%doc ChangeLog NEWS README
-%{_includedir}/xcb/*.h
-%{_libdir}/libxcb-cursor.so
-%{_libdir}/pkgconfig/xcb-cursor.pc
