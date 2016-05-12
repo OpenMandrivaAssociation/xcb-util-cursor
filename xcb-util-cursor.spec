@@ -4,8 +4,8 @@
 
 Summary:	xcb-util's xcb-cursor
 Name:		xcb-util-cursor
-Version:	0.1.2
-Release:	3
+Version:	0.1.3
+Release:	1
 Url:		http://xcb.freedesktop.org
 Source0:	http://xcb.freedesktop.org/dist/%{name}-%{version}.tar.bz2
 License:	MIT
@@ -61,4 +61,3 @@ This pakcage includes the development files required to build software against
 
 %install
 %makeinstall_std
-
