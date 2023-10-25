@@ -2,14 +2,12 @@
 %define libname %mklibname xcb-cursor %{major}
 %define devname %mklibname xcb-cursor -d
 
-%global optflags %{optflags} -O3
-
 Summary:	xcb-util's xcb-cursor
 Name:		xcb-util-cursor
-Version:	0.1.4
-Release:	2
+Version:	0.1.5
+Release:	1
 Url:		http://xcb.freedesktop.org
-Source0:	http://xcb.freedesktop.org/dist/%{name}-%{version}.tar.xz
+Source0:	https://xorg.freedesktop.org/archive/individual/lib/%{name}-%{version}.tar.xz
 License:	MIT
 Group:		System/X11
 BuildRequires:	pkgconfig(xcb-image)
