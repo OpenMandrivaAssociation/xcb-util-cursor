@@ -4,7 +4,7 @@
 
 Summary:	xcb-util's xcb-cursor
 Name:		xcb-util-cursor
-Version:	0.1.5
+Version:	0.1.6
 Release:	1
 Url:		https://xcb.freedesktop.org
 Source0:	https://xorg.freedesktop.org/archive/individual/lib/%{name}-%{version}.tar.xz
