@@ -10,6 +10,11 @@ Url:		https://xcb.freedesktop.org
 Source0:	https://xorg.freedesktop.org/archive/individual/lib/%{name}-%{version}.tar.xz
 License:	MIT
 Group:		System/X11
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	pkgconfig(xcb-image)
 BuildRequires:	pkgconfig(xcb-render)
 BuildRequires:	pkgconfig(xcb-renderutil)
